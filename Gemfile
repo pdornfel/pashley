@@ -16,3 +16,6 @@ gem 'rack-flash3'
 gem 'sinatra-flash'
 
 gem "capistrano"
+gem "capistrano-bundler"
+gem 'capistrano-thin', '~> 2.0.0'
+gem 'capistrano-rvm'

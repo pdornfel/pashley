@@ -1,3 +1,9 @@
+server "174.138.41.44", user: "deploy", roles: %w{app db web}, my_property: :my_value
+# server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
+# server "db.example.com", user: "deploy", roles: %w{db}
+
+set :system_user, 'deploy' # defaults to root user; This user will SSH into the servers to generate all necessary files
+
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

@@ -1,8 +1,12 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "pashley"
+set :repo_url, "git@github.com:pdornfel/pashley.git"
+
+set :branch, "master"
+set :user, "deploy"
+set :deploy_to, "/home/deploy/apps/pashley"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -37,3 +41,18 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
+
+set :migration_role, :app
+
+set :rvm_ruby_version, '2.1.2'
+
+after 'deploy:finished', :restart_nginx
+desc "restart nginx"
+task :restart_nginx do
+  on roles(:all) do
+    execute "touch #{release_path}/tmp/restart.txt"
+  end
+end
