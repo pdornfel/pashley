@@ -3,10 +3,6 @@ body{
   font-size: 25px
 }
 
-.heart-wrapper.active{
-  padding-top: 13%
-}
-
 .home-msg{
   width: 500px;
   margin: auto;
