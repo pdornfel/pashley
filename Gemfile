@@ -1,4 +1,4 @@
-ruby "2.5.1"
+ruby "2.1.2"
 
 source "https://rubygems.org"
 gem 'sinatra'
@@ -16,6 +16,7 @@ gem 'rack-flash3'
 gem 'sinatra-flash'
 
 gem "capistrano"
-gem "capistrano-bundler"
-gem 'capistrano-thin', '~> 2.0.0'
 gem 'capistrano-rvm'
+
+gem "capistrano-bundler"
+gem "capistrano-passenger"

@@ -1,12 +1,24 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
+set :rvm_ruby_version, '2.1.2@pashley'
+
 set :application, "pashley"
 set :repo_url, "git@github.com:pdornfel/pashley.git"
 
 set :branch, "master"
 set :user, "deploy"
+
+set :linked_files, ["config/secrets.yml"]
+
+set :ssh_options, { :forward_agent => true }
+
+set :passenger_restart_with_touch, true
+
 set :deploy_to, "/home/deploy/apps/pashley"
+
+
+# after 'deploy:publishing', 'thin:restart'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
