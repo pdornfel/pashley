@@ -9,7 +9,8 @@ set :repo_url, "git@github.com:pdornfel/pashley.git"
 set :branch, "master"
 set :user, "deploy"
 
-set :linked_files, ["config/secrets.yml"]
+set :linked_files, ["config/secrets.yml", "config/database.yml"]
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 set :ssh_options, { :forward_agent => true }
 
