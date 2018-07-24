@@ -7,6 +7,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    "Hello, World!"
+    "I love Ashley Jade"
   end
 end
