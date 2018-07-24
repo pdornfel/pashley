@@ -3,8 +3,18 @@ body{
   font-size: 25px
 }
 
+.home-msg div{
+    padding: 25px !important;
+}
+
+.heart-wrapper.active{
+  top: 60%;
+}
+
 .home-msg{
   width: 500px;
   margin: auto;
   padding-top: 70px;
+
+
 }
