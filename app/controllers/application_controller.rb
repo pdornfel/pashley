@@ -7,6 +7,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    "I love Ashley Jade"
+      erb :'application/index.html'
   end
 end
